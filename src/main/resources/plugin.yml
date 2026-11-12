@@ -1,0 +1,21 @@
+name: ${project.name}
+version: ${project.version}
+main: com.mxr156.orelocks.OreLocksPlugin
+api-version: '1.20'
+description: Lock ores behind permission nodes (e.g. orelock.diamond).
+author: mxr156
+softdepend: [LuckPerms, Essentials]
+
+commands:
+  orelocks:
+    description: View your unlocked ores or manage OreLocks.
+    usage: /<command> [list|check <player>|reload]
+    aliases: [orelock, ores]
+
+permissions:
+  orelocks.admin:
+    description: Allows /orelocks reload and /orelocks check <player>.
+    default: op
+  orelock.bypass:
+    description: Bypass every ore lock.
+    default: false

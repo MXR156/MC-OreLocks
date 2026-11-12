@@ -1,0 +1,93 @@
+# ---------------------------------------------------------------
+#  OreLocks configuration
+#
+#  Each entry under "locks" locks one or more blocks behind a
+#  permission node. Players without the node cannot mine those
+#  blocks. Grant nodes with LuckPerms, e.g.:
+#     /lp user <player> permission set orelock.diamond true
+#  or grant everything with orelock.* (or bypass with orelock.bypass).
+#
+#  Block names are Bukkit Material names:
+#  https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+# ---------------------------------------------------------------
+
+# If true, server operators ignore all locks. If false, ops need the
+# nodes too (or orelock.bypass), which makes testing as op easier.
+ops-bypass: false
+
+# Players in creative mode are never blocked.
+ignore-creative: true
+
+# Stop TNT / creepers / beds etc. from breaking locked ores, so they
+# can't be used to get around the lock.
+protect-from-explosions: true
+
+# Seconds between "locked" messages to the same player (stops chat spam).
+message-cooldown-seconds: 2
+
+# Also send the locked message to the action bar instead of chat.
+use-action-bar: false
+
+messages:
+  prefix: "&8[&6OreLocks&8] &r"
+  locked: "&cYou haven't unlocked {ore}&c yet! Purchase it to mine this ore."
+  list-header: "&6Ore unlocks:"
+  list-unlocked: " &a✔ {ore}"
+  list-locked: " &c✖ {ore} &7({permission})"
+  list-header-other: "&6Ore unlocks for &e{player}&6:"
+  reloaded: "&aOreLocks configuration reloaded."
+  no-permission: "&cYou don't have permission to do that."
+  player-not-found: "&cPlayer not found (they must be online)."
+  usage: "&7Usage: /orelocks [list|check <player>|reload]"
+
+locks:
+  coal:
+    enabled: false
+    display-name: "&8Coal"
+    permission: orelock.coal
+    blocks: [COAL_ORE, DEEPSLATE_COAL_ORE]
+  copper:
+    enabled: false
+    display-name: "&6Copper"
+    permission: orelock.copper
+    blocks: [COPPER_ORE, DEEPSLATE_COPPER_ORE]
+  iron:
+    enabled: true
+    display-name: "&fIron"
+    permission: orelock.iron
+    blocks: [IRON_ORE, DEEPSLATE_IRON_ORE]
+  gold:
+    enabled: true
+    display-name: "&eGold"
+    permission: orelock.gold
+    blocks: [GOLD_ORE, DEEPSLATE_GOLD_ORE, NETHER_GOLD_ORE]
+  redstone:
+    enabled: true
+    display-name: "&4Redstone"
+    permission: orelock.redstone
+    blocks: [REDSTONE_ORE, DEEPSLATE_REDSTONE_ORE]
+  lapis:
+    enabled: true
+    display-name: "&9Lapis Lazuli"
+    permission: orelock.lapis
+    blocks: [LAPIS_ORE, DEEPSLATE_LAPIS_ORE]
+  diamond:
+    enabled: true
+    display-name: "&bDiamond"
+    permission: orelock.diamond
+    blocks: [DIAMOND_ORE, DEEPSLATE_DIAMOND_ORE]
+  emerald:
+    enabled: true
+    display-name: "&aEmerald"
+    permission: orelock.emerald
+    blocks: [EMERALD_ORE, DEEPSLATE_EMERALD_ORE]
+  quartz:
+    enabled: true
+    display-name: "&fNether Quartz"
+    permission: orelock.quartz
+    blocks: [NETHER_QUARTZ_ORE]
+  ancient_debris:
+    enabled: true
+    display-name: "&5Ancient Debris"
+    permission: orelock.netherite
+    blocks: [ANCIENT_DEBRIS]
