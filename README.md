@@ -8,7 +8,11 @@ Works with any permissions plugin, since it uses Bukkit's standard `hasPermissio
 is recommended. There are no hard dependencies.
 
 ## Install
-1. Build with `mvn package` (or grab the jar), then put `target/OreLocks-1.0.0.jar` in `plugins/`.
+1. Build it (you only need a JDK, since Maven downloads itself):
+   - Windows: `.\mvnw.cmd package`
+   - macOS/Linux: `./mvnw package`
+
+   Then put `target/OreLocks-1.0.0.jar` in `plugins/`.
 2. Start the server. This creates `plugins/OreLocks/config.yml`.
 3. Edit the locks you want, then run `/orelocks reload`.
 
