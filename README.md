@@ -12,7 +12,9 @@ is recommended. There are no hard dependencies.
 2. Start the server. This creates `plugins/OreLocks/config.yml`.
 3. Edit the locks you want, then run `/orelocks reload`.
 
-Supports Minecraft 1.20+ (Spigot, Paper, Purpur), Java 17+.
+Supports Minecraft 1.20 through 26.x (Spigot, Paper, Purpur). The jar targets Java 17, so it
+runs on whatever Java your server needs (26.x servers need Java 25). To compile against a
+newer API: `mvn package -Dspigot.version=26.3-R0.1-SNAPSHOT`.
 
 ## Default permission nodes
 | Node | Unlocks |

@@ -77,9 +77,13 @@ public final class OreLockListener implements Listener {
                 "ore", OreLocksPlugin.color(lock.displayName()),
                 "permission", lock.permission());
         if (plugin.isUseActionBar()) {
-            player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(text));
-        } else {
-            player.sendMessage(text);
+            try {
+                player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(text));
+                return;
+            } catch (LinkageError | UnsupportedOperationException e) {
+                // BungeeCord chat API unavailable on this server; fall back to chat.
+            }
         }
+        player.sendMessage(text);
     }
 }
